@@ -21,7 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src",
+    "lint-fix": "eslint --fix ./src"
   },
   "eslintConfig": {
     "extends": [
@@ -29,6 +31,9 @@
       "react-app/jest"
     ]
   },
+  "pre-commit": [
+    "lint"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
@@ -42,6 +47,14 @@
     ]
   },
   "devDependencies": {
-    "prettier": "^3.3.3"
+    "@eslint/js": "^9.9.0",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.35.0",
+    "globals": "^15.9.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "3.3.3",
+    "typescript-eslint": "^8.1.0"
   }
 }
