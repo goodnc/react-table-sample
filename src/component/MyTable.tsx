@@ -92,12 +92,13 @@ const columns: TableColumnsType<DataType> = [
     },
 ];
 
+// Add mock data
 const data: DataType[] = [];
 for (let i = 0; i < 100; i++) {
     data.push({
         key: i,
         num: i + 1,
-        name: `Edward ${i}`,
+        name: `Edward ${i + 1}`,
         age: Math.floor(Math.random() * (40 - 18 + 1)) + 18,
         address: `London Park no. ${i}`,
     });
@@ -108,6 +109,9 @@ function MyTable() {
         <Table
             columns={columns}
             dataSource={data}
+            pagination={{
+                pageSize: 20,
+            }}
             scroll={{ x: 1600, y: 550 }}
         />
     );
